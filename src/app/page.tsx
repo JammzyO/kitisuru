@@ -285,7 +285,7 @@ function Overview() {
             <div className="w-10 h-px bg-[#B86840] shrink-0 mt-[0.55rem]" />
             <p style={{ ...O, fontWeight: 300 }} className="text-[#7A6A58] text-xl leading-relaxed max-w-3xl">
               Nestled within the exclusive New Kitisuru Estate, this meticulously crafted residence offers
-              a rare convergence of architectural distinction, lush mature gardens, and unhurried calm —
+              four en-suite bedrooms, a dedicated study, lush mature gardens, and unhurried calm —
               the hallmarks of truly elevated living in Nairobi.
             </p>
           </div>
@@ -386,12 +386,14 @@ function Amenities() {
     { icon: <Trees size={24} strokeWidth={1.5} />,          t: "Mature Gardens"       },
     { icon: <Users size={24} strokeWidth={1.5} />,          t: "Staff Quarters"       },
     { icon: <Bath size={24} strokeWidth={1.5} />,           t: "4 Ensuite Bedrooms"   },
+    { icon: <HomeIcon size={24} strokeWidth={1.5} />,       t: "Study Room"           },
     { icon: <Sun size={24} strokeWidth={1.5} />,            t: "Formal Dining Room"   },
     { icon: <HomeIcon size={24} strokeWidth={1.5} />,       t: "Sun Room"             },
     { icon: <Car size={24} strokeWidth={1.5} />,            t: "Ample Parking"        },
-    { icon: <Droplets size={24} strokeWidth={1.5} />,       t: "Borehole Water"       },
+    { icon: <Droplets size={24} strokeWidth={1.5} />,       t: "6,000L Water Storage" },
+    { icon: <Droplets size={24} strokeWidth={1.5} />,       t: "Rainwater Collection" },
     { icon: <Shield size={24} strokeWidth={1.5} />,         t: "24-Hour Security"     },
-    { icon: <Zap size={24} strokeWidth={1.5} />,            t: "Generator Backup"     },
+    { icon: <Zap size={24} strokeWidth={1.5} />,            t: "Solar Backup"         },
     { icon: <Bed size={24} strokeWidth={1.5} />,            t: "Private Compound"     },
   ];
 
@@ -431,8 +433,8 @@ function Amenities() {
 ══════════════════════════════════════════════ */
 function OutdoorLiving() {
   const thumbs = [
-    { src: "/images/garden-lawn.jpeg",  label: "Upper Garden"  },
-    { src: "/images/lower-garden.jpeg", label: "Lower Garden"  },
+    { src: "/images/garden-lawn.jpeg",  label: "Lower Garden"  },
+    { src: "/images/lower-garden.jpeg", label: "Upper Garden"  },
     { src: "/images/gazebo.jpeg",       label: "Garden Gazebo" },
   ];
 
@@ -560,7 +562,7 @@ function Gallery() {
     { src: "/images/garden-lawn.jpeg",     label: "Upper Garden"          },
     { src: "/images/garden-lawn-2.jpeg",   label: "Lawn & Trees"          },
     { src: "/images/gazebo.jpeg",          label: "Garden Gazebo"         },
-    { src: "/images/lower-garden.jpeg",    label: "Lower Garden"          },
+    { src: "/images/lower-garden.jpeg",    label: "Upper Garden"          },
   ];
 
   type GalleryItem = { src: string; label: string };
@@ -797,7 +799,7 @@ function EnquiryForm() {
             </h2>
             <div className="w-8 h-px bg-[#B86840] mb-8" />
             <p style={{ ...O, fontWeight: 300 }} className="text-[#7A6A58] text-base leading-relaxed mb-12">
-              Complete the form and our letting agent will reach out within 24 hours to arrange
+              Complete the form and we will reach out within 24 hours to arrange
               a private viewing at your convenience.
             </p>
 
@@ -816,17 +818,6 @@ function EnquiryForm() {
               ))}
             </div>
 
-            {/* Secondary CTA */}
-            <a href="tel:+254700000000"
-              className="flex flex-col items-start gap-1.5 px-8 py-5 border border-[#B86840]/50 hover:border-[#B86840] hover:bg-[#B86840]/5 transition-all duration-300 group">
-              <span style={{ ...O, fontSize: "11px", letterSpacing: "0.24em", textTransform: "uppercase" as const }}
-                className="text-[#B86840]">
-                Or Call Us Directly
-              </span>
-              <span style={{ ...O, fontWeight: 300, fontSize: "0.95rem" }} className="text-[#7A6A58] group-hover:text-[#B86840]/70 transition-colors duration-300">
-                +254 700 000 000
-              </span>
-            </a>
           </Reveal>
         </div>
 
@@ -851,9 +842,6 @@ function EnquiryForm() {
                     {dateFmt && timeLabel
                       ? `We'll confirm your ${dateFmt} ${timeLabel.toLowerCase()} viewing within 24 hours.`
                       : "We'll confirm your viewing within 24 hours."}
-                  </p>
-                  <p style={{ ...O, fontWeight: 300, fontSize: "0.85rem" }} className="text-[#AFA090]">
-                    Urgent? Call +254 700 000 000
                   </p>
                 </motion.div>
               ) : (
@@ -971,7 +959,7 @@ function EnquiryForm() {
                             <div>
                               <label style={lStyle} className="block mb-2">Phone Number *</label>
                               <input type="tel" name="phone" required value={form.phone} onChange={change}
-                                placeholder="+254 700 000 000" className={iBase} />
+                                placeholder="+254 7XX XXX XXX" className={iBase} />
                             </div>
                             <div>
                               <label style={lStyle} className="block mb-2">Email Address *</label>
@@ -1013,12 +1001,12 @@ function EnquiryForm() {
 ══════════════════════════════════════════════ */
 function VideoShowcase() {
   const videos = [
-    { src: "/videos/video-13.mp4", label: "Exterior & Gardens"  },
-    { src: "/videos/video-14.mp4", label: "Terrace & Grounds"   },
-    { src: "/videos/video-15.mp4", label: "Interior Spaces"     },
-    { src: "/videos/video-01.mp4", label: "Living Areas"        },
-    { src: "/videos/video-04.mp4", label: "Kitchen & Dining"    },
-    { src: "/videos/video-07.mp4", label: "Garden Walk"         },
+    { src: "/videos/video-13.mp4", label: "Garden Gazebo"   },
+    { src: "/videos/video-14.mp4", label: "Backyard Walk"   },
+    { src: "/videos/video-15.mp4", label: "Lower Garden"    },
+    { src: "/videos/video-07.mp4", label: "Kitchen"         },
+    { src: "/videos/video-03.mp4", label: "Interior"        },
+    { src: "/videos/video-12.mp4", label: "Interior"        },
   ];
 
   const [active, setActive] = useState<{ src: string; label: string } | null>(null);
@@ -1149,13 +1137,12 @@ function Footer() {
             <p style={O} className="text-[10px] tracking-[0.45em] uppercase text-[#7A6A58] mb-5">
               New Kitisuru Estate
             </p>
-            <h2 style={{ ...F, fontWeight: 700, fontSize: "clamp(3rem, 6vw, 6rem)", lineHeight: 0.9, letterSpacing: "-0.03em" }}
+            <h2 style={{ ...F, fontWeight: 700, fontSize: "clamp(3rem, 6vw, 6rem)", lineHeight: 1.05, letterSpacing: "-0.03em" }}
               className="text-white mb-4">
-              A Residence<br />
-              <span style={{ fontStyle: "italic", fontWeight: 300, color: "#B86840" }}>Apart</span>
+              A Residence <span style={{ fontStyle: "italic", fontWeight: 300, color: "#B86840" }}>Apart</span>
             </h2>
-            <p style={{ ...O, fontWeight: 300 }} className="text-[#7A6A58] text-sm max-w-sm leading-relaxed mt-8">
-              An exceptional 4-bedroom private residence in the heart of New Kitisuru Estate,
+            <p style={{ ...O, fontWeight: 300 }} className="text-[#7A6A58] text-sm max-w-sm leading-relaxed mt-10">
+              An exceptional 4-bedroom en-suite residence with study in the heart of New Kitisuru Estate,
               Nairobi — available for let at Ksh 480,000 per month.
             </p>
           </div>
@@ -1189,24 +1176,6 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
-          <div>
-            <p style={O} className="text-[10px] tracking-[0.35em] uppercase text-[#7A6A58] mb-5">Contact the Agent</p>
-            <div className="flex flex-col gap-4">
-              <a href="tel:+254700000000"
-                className="flex items-center gap-3 text-[#AFA090] text-sm hover:text-[#B86840] transition-colors duration-300"
-                style={O}>
-                <Phone size={14} strokeWidth={1.5} className="text-[#B86840] shrink-0" />
-                +254 700 000 000
-              </a>
-              <a href="mailto:enquiries@kitisuruestate.co.ke"
-                className="flex items-center gap-3 text-[#AFA090] text-sm hover:text-[#B86840] transition-colors duration-300"
-                style={O}>
-                <Mail size={14} strokeWidth={1.5} className="text-[#B86840] shrink-0" />
-                enquiries@kitisuruestate.co.ke
-              </a>
-            </div>
-          </div>
 
           {/* Location */}
           <div>
@@ -1269,44 +1238,6 @@ function StickyBottomBar() {
   );
 }
 
-/* ══════════════════════════════════════════════
-   WHATSAPP FLOAT
-══════════════════════════════════════════════ */
-function WhatsAppFloat() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const fn = () => setVisible(window.scrollY > 300);
-    window.addEventListener("scroll", fn);
-    return () => window.removeEventListener("scroll", fn);
-  }, []);
-
-  return (
-    <AnimatePresence>
-      {visible && (
-        <motion.a
-          href="https://wa.me/254700000000"
-          target="_blank" rel="noopener noreferrer"
-          aria-label="Chat on WhatsApp"
-          initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0, opacity: 0 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          whileHover={{ scale: 1.1 }}
-          className="fixed bottom-28 right-6 z-40 w-14 h-14 rounded-full flex items-center justify-center shadow-lg"
-          style={{ backgroundColor: "#25D366" }}>
-          {/* Official WhatsApp SVG */}
-          <svg viewBox="0 0 32 32" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fillRule="evenodd" clipRule="evenodd"
-              d="M16 2C8.268 2 2 8.268 2 16c0 2.425.638 4.7 1.752 6.678L2 30l7.534-1.719A13.934 13.934 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z"
-              fill="white" />
-            <path
-              d="M22.12 19.47c-.32-.16-1.893-.933-2.187-1.04-.293-.106-.507-.16-.72.16-.213.32-.826 1.04-.986 1.253-.16.213-.32.24-.64.08-.32-.16-1.36-.5-2.587-1.594-.956-.853-1.6-1.907-1.787-2.227-.186-.32-.02-.494.14-.653.147-.145.32-.373.48-.56.16-.186.213-.32.32-.533.107-.213.053-.4-.027-.56-.08-.16-.72-1.733-.987-2.373-.26-.627-.52-.534-.72-.547-.186-.013-.4-.013-.613-.013-.213 0-.56.08-.853.373-.293.294-1.12 1.094-1.12 2.667 0 1.573 1.147 3.093 1.307 3.306.16.213 2.253 3.44 5.467 4.826.763.333 1.36.533 1.826.68.767.24 1.466.207 2.016.127.613-.093 1.893-.773 2.16-1.52.266-.746.266-1.386.187-1.52-.08-.133-.293-.213-.614-.373z"
-              fill="#25D366" />
-          </svg>
-        </motion.a>
-      )}
-    </AnimatePresence>
-  );
-}
 
 /* ══════════════════════════════════════════════
    PAGE
@@ -1328,7 +1259,6 @@ export default function Page() {
       </main>
       <Footer />
       <StickyBottomBar />
-      <WhatsAppFloat />
     </>
   );
 }
