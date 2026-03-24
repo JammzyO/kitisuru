@@ -176,7 +176,7 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-[#1C1510]/55 via-[#1C1510]/15 to-transparent" />
 
       {/* Content — anchored to bottom */}
-      <div className="relative z-10 flex flex-col justify-end min-h-screen pb-40 w-full" style={{ maxWidth: "900px", marginLeft: "auto", marginRight: "auto", paddingLeft: "40px", paddingRight: "40px" }}>
+      <div className="relative z-10 flex flex-col justify-end min-h-screen pb-80 w-full text-left" style={{ maxWidth: "900px", marginLeft: "100px", marginRight: "auto", paddingLeft: "0px", paddingRight: "40px" }}>
 
         {/* Location label */}
         <motion.p
