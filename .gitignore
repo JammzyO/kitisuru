@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# env
+.env
+.env.local
+.env.*.local
+
+# misc
+.DS_Store
+*.pem
+Thumbs.db
+
+# temp
+temporary screenshots/
+
+# brand assets (large source media)
+brand Assets/

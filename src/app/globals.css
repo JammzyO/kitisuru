@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── Palette — derived from property descriptors ─────────────────────────
+     Terracotta/salmon render → terra
+     Clay tile roof          → clay
+     Caramel leather         → caramel
+     Stone fireplace         → stone
+     Tropical garden         → moss (accent only)
+     Hardwood floors         → wood
+  ──────────────────────────────────────────────────────────────────────── */
+
+  /* Backgrounds */
+  --color-cream:        #FAF7F2;   /* warm white — primary bg */
+  --color-cream-warm:   #F3EDE3;   /* slightly deeper warm */
+  --color-cream-deep:   #EBE3D5;   /* deep cream for alternating sections */
+  --color-parchment:    #E2D7C4;   /* card surfaces */
+
+  /* Neutrals */
+  --color-ink:          #1C1510;   /* near-black, warm */
+  --color-charcoal:     #3C3028;   /* dark body */
+  --color-stone:        #7A6A58;   /* mid warm gray */
+  --color-stone-light:  #AFA090;   /* light label gray */
+  --color-rule:         #D5C9B8;   /* dividers */
+
+  /* Accent — terracotta/clay */
+  --color-terra:        #B86840;   /* primary accent — terracotta facade */
+  --color-terra-light:  #D4895E;   /* hover states */
+  --color-terra-dark:   #8C4E28;   /* pressed / dark variant */
+  --color-clay:         #9C6A48;   /* secondary warm — clay roof */
+  --color-caramel:      #C49860;   /* gold-warm — leather interior */
+
+  /* Footer */
+  --color-dark:         #18120D;   /* footer/dark sections */
+  --color-dark-surface: #231A12;   /* elevated surface in dark context */
+
+  /* Typography */
+  --font-display: var(--font-fraunces), "Georgia", serif;
+  --font-body:    var(--font-outfit), "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+section#hero {
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Paper grain overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.016;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar        { width: 5px; }
+::-webkit-scrollbar-track  { background: var(--color-cream-warm); }
+::-webkit-scrollbar-thumb  { background: var(--color-terra); border-radius: 3px; }
+
+/* Section container */
+.section-container {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* Form inputs */
+.luxury-input {
+  background: var(--color-cream);
+  border: 1px solid var(--color-rule);
+  color: var(--color-ink);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  outline: none;
+  font-family: var(--font-body);
+  font-weight: 300;
+  border-radius: 0;
+  width: 100%;
+}
+.luxury-input::placeholder {
+  color: var(--color-stone-light);
+}
+.luxury-input:focus {
+  border-color: var(--color-terra);
+  box-shadow: 0 0 0 3px rgba(184, 104, 64, 0.08);
+}
+.luxury-input option {
+  background: #fff;
+  color: var(--color-ink);
+}
